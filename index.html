@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Lotto</title>
+
+</head><body>
+<h1>Lotto</h1>
+<p>Paina nappia lototaksesi 3 rivia
+</p>
+<p>Lottorivit</p>
+<button onclick="tulostus()">Tulostus</button>
+<button onclick="tyhjennys()">Tyhjennys</button>
+<p id="ekarivi"></p>
+<p id="tokarivi"></p>
+<p id="kolmasrivi"></p>
+
+<script>
+var rivi,rivi2,rivi3,i;
+
+function tulostus()
+{
+rivi = [];
+rivi2 = [];
+rivi3 = [];
+for(i = 0; i < 1; i++)
+{
+while(rivi.length < 7){
+var randomnumber = Math.ceil(Math.random()*39)
+if(rivi.indexOf(randomnumber) > -1) continue;
+rivi[rivi.length] = randomnumber;
+}
+while(rivi2.length < 7){
+var randomnumber = Math.ceil(Math.random()*39)
+if(rivi2.indexOf(randomnumber) > -1) continue;
+rivi2[rivi2.length] = randomnumber;
+}
+while(rivi3.length < 7){
+var randomnumber = Math.ceil(Math.random()*39)
+if(rivi3.indexOf(randomnumber) > -1) continue;
+rivi3[rivi3.length] = randomnumber;
+}
+}
+document.getElementById("ekarivi").innerHTML = rivi;
+document.getElementById("tokarivi").innerHTML = rivi2;
+document.getElementById("kolmasrivi").innerHTML = rivi3;
+}
+
+function tyhjennys()
+{
+document.getElementById("ekarivi").innerHTML = "";
+document.getElementById("tokarivi").innerHTML = "";
+document.getElementById("kolmasrivi").innerHTML = "";
+}
+
+</script>
+</body></html>
